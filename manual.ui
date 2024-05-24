@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Manual</class>
+ <widget class="QDialog" name="Manual">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>815</width>
+    <height>889</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Manual</string>
+  </property>
+  <widget class="QTextBrowser" name="textBrowser">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>781</width>
+     <height>811</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600; text-decoration: underline;&quot;&gt;Инструкция к программе PirolizPeak&lt;/span&gt;&lt;span style=&quot; font-size:14pt; text-decoration: underline;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;интерпретация данных пиролиза (Rock Eval 6)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;1. &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; text-decoration: underline;&quot;&gt;&amp;quot;Выбрать каталог&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; - загрузка файлов для интерпретации. &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Необходимо выбрать каталог, содержащий файлы хроматограмм импортированные в формат &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-style:italic;&quot;&gt;txt. &lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;При импорте в программе &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; font-style:italic;&quot;&gt;Postrun&lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-style:italic;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;выбрать категории Chromatogram, (TIC/MIC), (MS), delimeter - tab. &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Обязательным условием является наличие в папке трех типов файлов для каждой пробы: *&lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-style:italic;&quot;&gt;_fid&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;, *&lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-style:italic;&quot;&gt;_ms&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;, *&lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-style:italic;&quot;&gt;_ox_ms. &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;В названии файла должны содержаться данные разделенные нижним подчеркиванием ( _ ): 1 - номер образца, 2 - номер пробы, 3 - навеска обазца в формате 0.00000, 4 - один из трех типов файла, описанных выше.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;2. &lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;После загрузки и первичной автоматической обработки доступен список загруженных файлов. При клике по файлу в списке выводятся хроматограммы соответстующего файла. В зависимости от типа файла, на хроматограмме автоматически выделены пики  соответствующих параметров. &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Выделение пиков можно корректировать изменяя параметры t1, t2, t3, BL (базовая линия). Необходимо проверить выделение параметров в каждом файле, особое внимание стоит уделить файлам выделенным в списке красным цветом. После корректировки выделения пика нужно обязательно нажать кнопку &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; text-decoration: underline;&quot;&gt;&amp;quot;Сохранить изменения&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;. При этом файл в списке выделится зеленым цветом.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;3. Градуировка.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Для градуировки необходимо загрузить папку с файлами хроматограмм стандартного образца. Обработать все файлы - проверить правильность выделения пиков. Далее нажать кнопку &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; text-decoration: underline;&quot;&gt;&amp;quot;Выполнить градуировку&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;В окне градуировки отображаются вкладки с расчетными параметрами S1, S2 и т.д. Для каждого параметра отображается таблица с пробами градуировки и значениями площади пика параметра пробы. В таблице можно исключить из расчетов отдельный компонент отжав соответствующюю галочку. Красным цветом в таблице выделен компонент наиболее удаленный от среднего значения.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Для каждого параметра также отображаются: среднее значение навески пробы, среднее значение площади пика, RSD - коэффициент вариации, C_st - концентрация параметра в стандартном образце, расчитанный градуировочный коэффициент. Концентрацию стандартного образца можно изменить вручную или загрузить в соответствующем фалйле xlsx нажав на кнопку &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; text-decoration: underline;&quot;&gt;&amp;quot;Стандартный образец&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Для параметра Tmax отображаются: средняя Tmax, Tmax стандартного образца и расчитанный коэффициент dT.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Не закрывая окно градуировки, можно корректировать выделение пиков параметров в основном окне программы. При нажатии кнопки &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; text-decoration: underline;&quot;&gt;&amp;quot;Сохранить изменения&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;, значения в окне градуировки пересчитаются.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; text-decoration: underline;&quot;&gt;&amp;quot;Сохранить градуировку&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; - сохраняет градуировочные коэффициенты в xls файл. Данный файл загружается в основном окне программы нажатием на кнопку &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-style:italic; text-decoration: underline;&quot;&gt;&amp;quot;Загрузить градуировку&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;. При загрузке градуировки, градуировочные коэффициенты отображаются в соответствующей панели и применяются для расчета концентраций в загруженных файлах проб.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;4.&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; font-style:italic; text-decoration: underline;&quot;&gt;&amp;quot;Сохранить результат&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; - сохраняет таблицу с концентрациями и градуировочными коэффициентами в xls файл.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_standart">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>840</y>
+     <width>271</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Файл стандартного образца</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
