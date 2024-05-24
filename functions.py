@@ -2,8 +2,14 @@ import pandas as pd
 from PyQt5.QtWidgets import QApplication, QFileDialog, QCheckBox, QTableWidgetItem, QWidget, QHBoxLayout, QDoubleSpinBox
 import pyqtgraph as pg
 from numpy import mean, std, max, trapz
+import chardet
 from piroliz_peak_dialog import *
 from graduation_dialog import *
+
+
+def check_encoding(file_name):
+    with open(file_name, 'rb') as f:
+        return chardet.detect(f.read())['encoding']
 
 
 def check_file_name(list_name):
@@ -22,8 +28,10 @@ def check_file_name(list_name):
 
 
 def select_signal_by_ion(file_name: str, ion: int):
+
+    enc = check_encoding(file_name)
     def check_first_column(f_n, check_str):
-        with open(f_n) as f:
+        with open(f_n, encoding=enc) as f:
             n = 0
             while n < 100:
                 n += 1
@@ -32,7 +40,8 @@ def select_signal_by_ion(file_name: str, ion: int):
         return n - 2
     if ion == 0:
         calc_head = check_first_column(file_name, 'R.Time')
-        all_signals = pd.read_table(file_name, sep='\t', header=calc_head)
+        all_signals = pd.read_table(file_name, sep='\t', header=calc_head, encoding=enc)
+        print(all_signals)
         all_signals = all_signals.rename(columns={'Intensity': 'Absolute Intensity', 'R.Time': 'Ret.Time'})
         print(all_signals)
         for index_signal in all_signals.index:
@@ -42,7 +51,7 @@ def select_signal_by_ion(file_name: str, ion: int):
         index_ion_start = 0
     else:
         calc_head = check_first_column(file_name, 'Ret.Time')
-        all_signals = pd.read_table(file_name, sep='\t', header=calc_head)
+        all_signals = pd.read_table(file_name, sep='\t', header=calc_head, encoding=enc)
         str_ion = '1-1 {}.00'.format(str(ion))
         index_ion = all_signals.loc[all_signals['Ret.Time'] == 'm/z'].loc[all_signals['Absolute Intensity'] ==
                                                                           str_ion].index.tolist()[0]
