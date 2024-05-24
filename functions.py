@@ -31,15 +31,19 @@ def select_signal_by_ion(file_name: str, ion: int):
 
     enc = check_encoding(file_name)
     def check_first_column(f_n, check_str):
+        print(f_n)
         with open(f_n, encoding=enc) as f:
-            n = 0
-            while n < 100:
-                n += 1
-                if f.readline().strip().startswith(check_str):
-                    break
-        return n - 2
+            empt = 0
+            for idx, line in enumerate(f):
+                if line.strip() == '':
+                    empt += 1
+                if line.strip().startswith(check_str):
+                    return idx - empt
+            return None
+
     if ion == 0:
         calc_head = check_first_column(file_name, 'R.Time')
+        print(calc_head)
         all_signals = pd.read_table(file_name, sep='\t', header=calc_head, encoding=enc)
         print(all_signals)
         all_signals = all_signals.rename(columns={'Intensity': 'Absolute Intensity', 'R.Time': 'Ret.Time'})
