@@ -16,6 +16,9 @@ MainWindow = QtWidgets.QMainWindow()
 ui = Ui_MainWindow()
 ui.setupUi(MainWindow)
 
+m_width, m_height = get_width_height_monitor()
+MainWindow.resize(m_width - 100, m_height - 200)
+
 Graduation = QtWidgets.QDialog()
 ui_g = Ui_Graduation()
 ui_g.setupUi(Graduation)
@@ -471,6 +474,7 @@ def save_result():
 def graduation():
     Graduation.setWindowFlag(QtCore.Qt.WindowStaysOnTopHint)
     Graduation.show()
+    Graduation.resize(int(m_width/3), int(m_height/2))
 
     fill_tabs(ui_g, tab_areas)
     calc_mean_RSD(ui_g)
@@ -503,6 +507,7 @@ def open_manual():
     ui_m = Ui_Manual()
     ui_m.setupUi(manual)
     manual.show()
+    manual.resize(int(m_width/2), m_height - 100)
 
     def open_standart_file():
         subprocess.call('шаблон/стандартный образец.xlsx', shell=True)

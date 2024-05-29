@@ -3,6 +3,8 @@ from PyQt5.QtWidgets import QApplication, QFileDialog, QCheckBox, QTableWidgetIt
 import pyqtgraph as pg
 from numpy import mean, std, max, trapz
 import chardet
+from screeninfo import get_monitors
+
 from piroliz_peak_dialog import *
 from graduation_dialog import *
 
@@ -10,6 +12,12 @@ from graduation_dialog import *
 def check_encoding(file_name):
     with open(file_name, 'rb') as f:
         return chardet.detect(f.read())['encoding']
+
+
+def get_width_height_monitor():
+    for monitor in get_monitors():
+        return monitor.width, monitor.height
+
 
 
 def check_file_name(list_name):
@@ -23,6 +31,7 @@ def check_file_name(list_name):
                 check_list.append('_'.join(i.split('_')[:-1]))
     for i in check_list:
         if check_list.count(i) != 3:
+            print(i)
             error_list.append(i)
     return error_list
 
